@@ -1,0 +1,9 @@
+{
+    "wordDescriptions":
+    [
+        "Adjective",
+        "Noun"
+    ],
+
+    "template": "Today I went to the zoo. I saw a(n) {} {} jumping around."
+}
