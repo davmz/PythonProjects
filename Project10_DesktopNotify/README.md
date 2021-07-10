@@ -4,4 +4,4 @@ If you want to run the program in the background, run the .pyw file. It will run
 
 ![image](https://user-images.githubusercontent.com/74930417/125172785-2b64f700-e181-11eb-88c2-97230e2f8f1a.png)
 
-clock.ico does not seem to work on the notification but it does seem to work on task manager and on your windows navigatio bar.
+clock.ico image does not seem to work on the notification but it does seem to work on task manager and on your windows navigation bar.
