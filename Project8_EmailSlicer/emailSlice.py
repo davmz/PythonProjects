@@ -4,6 +4,7 @@ Reason: Hello World
 Created: July 9, 2021
 Updated: July 9, 2021
 """
+
 ## Program
 # Get user's email address
 emailAddress = input("Enter email address: ").strip()
