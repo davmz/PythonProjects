@@ -2,32 +2,62 @@
 Name: David Montanez
 Reason: YouTube MP4 Downloader
 Created: July 12, 2021
-Updated: July 12, 2021
+Updated: July 13, 2021
 """
 
 import random
 
 ## Program
-class Question:
-    def __init__(self, question, answer):
-        self.question = question
-        self.answer = answer
+# def randomQuestion(question):
+#     randomQuestion = random.randint(0, len(question) - 1)
 
-# def getRandomQuestion():
-#     questions = ["What does CPU stand for", "What does RAM stand for", "What does GPU stand for"]
-#     answers = ["central processing unit", "random access memory", "graphic processing unit"]
+#     return randomQuestion
 
-#     quizQuestions = dict(zip(questions, answers))
-#     randomQuestion = random.randint(0, len(questions) - 1)
-#     questionsAnswers = questions[randomQuestion]
+questionsPrompt = [
+    "What does CPU stand for",
+    "What does RAM stand for",
+    "What does GPU stand for",
+    "What does PSU stand for"
+]
 
-#     return questionsAnswers
+questionAnswers = [
+    "central processing unit",
+    "random access memory",
+    "graphic processing unit",
+    "power supply unit"
+]
 
-questions = ["What does CPU stand for", "What does RAM stand for", "What does GPU stand for", "What does PSU stand for"]
-answers = ["central processing unit", "random access memory", "graphic processing unit", "power supply unit"]
+quizQuestion = dict(zip(questionsPrompt, questionAnswers))
+randomQuestion = random.randint(0, len(questionsPrompt) - 1)
+quizAnswers = questionsPrompt[randomQuestion]
+askedQuestion = set()
 
-print("Welcome to the Computer Quiz Game!!")
-print("Answer these sets of questions and get your final grade at the end!")
+
+
+
+
+# answers = ["central processing unit", "random access memory", "graphic processing unit", "power supply unit"]
+
+# print("Welcome to the Computer Quiz Game!!")
+# print("Answer these sets of questions and get your final grade at the end!")
+
+# def runQuiz(questions):
+#     score = 0
+
+#     for question in questions:
+#         userAnswer = input(question.prompt)
+
+#         if(userAnswer == question.answer):
+#             print("You got it correct!!")
+#             score += 1
+#         else:
+#             print("You got it incorrect!!")
+#             score -= 1
+
+#     print("\nCongratulations!! You finished the quiz!")
+#     print(f"You got {score} out of {str(len(questions))} correct!")
+
+# runQuiz(questions)
 
 # score = 4
 # while(score != 0):
@@ -35,7 +65,7 @@ print("Answer these sets of questions and get your final grade at the end!")
 #     answers = ["central processing unit", "random access memory", "graphic processing unit", "power supply unit"]
 
 #     quizQuestions = dict(zip(questions, answers))
-#     randomQuestion = random.randint(0, len(questions) - 1)
+    # randomQuestion = random.randint(0, len(questions) - 1
 #     questionsAnswers = questions[randomQuestion]
 #     askedQuestion = set()
 
@@ -44,11 +74,11 @@ print("Answer these sets of questions and get your final grade at the end!")
 #         askedQuestion.add(questionsAnswers)
 
 
-#     # if(userAnswer == quizQuestions[questionsAnswers]):
-#     #     print("You are correct!!\n")
-#     # else:
-#     #     print("You are incorrect!!")
-#     #     score -= 1
+    # if(userAnswer == quizQuestions[questionsAnswers]):
+    #     print("You are correct!!\n")
+    # else:
+    #     print("You are incorrect!!")
+    #     score -= 1
 
 #             # askedQuestion.add(questionsAnswers)
 
