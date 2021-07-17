@@ -38,7 +38,7 @@ def randomQuest(question):
 
         randomQuestion = random.randint(0, len(questionPrompts) - 1)
         question = questionPrompts[randomQuestion]
-        askedQuestions.add()
+        askedQuestions.add(question)
 
         return question
 
