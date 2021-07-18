@@ -132,6 +132,22 @@ def changeUserName():
 
 def changeUserPassword():
     pass
+    # while True:
+    #     newPassword = input("Enter New Password: ")
+
+    #     if(newPassword != ""):
+    #         break
+
+    # while True:
+    #     newConfirmPassword = input("\nConfirm Your New Password: ")
+
+    #     if(newConfirmPassword == newPassword):
+    #         break
+    #     else:
+    #         print("Passwords Don't Match!")
+    
+    # addAccountInfo()
+
  
 # Adds the account in the txt file
 def addAccountInfo(userInfo: list):
