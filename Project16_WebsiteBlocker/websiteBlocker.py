@@ -19,7 +19,7 @@ windowHost = r"C:\Windows\System32\drivers\etc\hosts"
 defaultHost = windowHost
 redirect = "127.0.0.1"
 
-def block_websites():
+def websiteBlocker():
     startHour = input("\nStarting Hour: (0 to 24):")
     endHour = input("Starting Hour: (0 to 24):")
 
@@ -46,4 +46,4 @@ def block_websites():
     time.sleep(3)
 
 if(__name__ == "__main__"):
-    block_websites()
+    websiteBlocker()
