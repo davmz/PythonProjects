@@ -16,7 +16,7 @@ def leapYear():
     userPrompt = "Y"
 
     try:
-        while(userPrompt == "Y"):
+        while(userPrompt in ["Y", "YES"]):
             userYear = int(input("Input Year: "))
             leapYear = isLeapYear(userYear)
 
@@ -27,7 +27,7 @@ def leapYear():
 
             userPrompt = input("\nDo you want to try another year? (Y/N): ").upper()
             clear()
-
+            print("Thank you!!")
     except:
         print("\nPlease input a valid year!!")
 
