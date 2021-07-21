@@ -21,19 +21,14 @@ import speech_recognition as sr
 # pip install pyttsx3
 import pyttsx3
 
-# pip install python-vlc
-# https://get.videolan.org/vlc/3.0.11/win64/vlc-3.0.11-win64.exe
-import vlc
-
 # pip install playsound
-import playsound
+from playsound import playsound
 
 ## Program 
 def speech():
     recognizer = sr.Recognizer()
     voiceEngine = pyttsx3.init()
     voiceEngine.setProperty("rate", 190)
-
 
 
     # voiceEngine.say("I am Jarvis. Your AI Helper!")
@@ -51,20 +46,21 @@ def speech():
                 text = text.lower()
                 print(text)
 
-                if("hey google" in text):
+                if(text == "hey jarvis"):
+                    text = text.replace("hey jarvis", "")
+
+                    print(text)
                     voiceEngine.say("How can I help you... Question mark!")
                     voiceEngine.runAndWait()
+
+                    if("clap" in text):
+                        playsound(".\\Project#_TextSpeech\\clap.mp3", True)
 
                 if("my name is" in text):
                     name = text.split()
                     voiceEngine.say(f"Your name is {name[-1]}")
                     voiceEngine.runAndWait()
-
-                if("clap" in text):
-                    pass
                 
-                voiceEngine.say(text)
-                voiceEngine.runAndWait()
         except:
             recognizer = sr.Recognizer()
             continue
