@@ -28,6 +28,8 @@ def encryptMessage():
     print("Provide the message you would like to encrypt: \n")
     messageToEncrypt = input()
 
+    print(f"")
+
 def decryptMessage():
     clear()
     print("Provide the encrypted message: \n")
