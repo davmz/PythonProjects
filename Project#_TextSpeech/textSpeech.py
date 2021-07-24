@@ -25,74 +25,53 @@ import pyttsx3
 from playsound import playsound
 
 ## Program 
-def speech():
-    recognizer = sr.Recognizer()
-    voiceEngine = pyttsx3.init()
-    voiceEngine.setProperty("rate", 190)
+listener = sr.Recognizer()
+engine = pyttsx3.init()
+engine.setProperty("rate", 190)
+voices = engine.getProperty("voices")
+engine.setProperty("voice", voices[1].id)
 
+def talk(text):
+    engine.say(text)
+    engine.runAndWait()
 
-    # voiceEngine.say("I am Jarvis. Your AI Helper!")
-    # voiceEngine.say("How can I help you?")
-    # voiceEngine.runAndWait()
+def takeCommand():
+    try:
+        with sr.Microphone() as source:
+            print("Listening...")
 
-    while True:
-        try:
-            with sr.Microphone() as source:
-                
-                recognizer.adjust_for_ambient_noise(source, duration = 0.2)
-                audio = recognizer.listen(source)
+            listener.adjust_for_ambient_noise(source, duration = 0.2)
+            voice = listener.listen(source)
+            command = listener.recognize_google(voice)
+            command = command.lower()
 
-                text = recognizer.recognize_google(audio)
-                text = text.lower()
-                print(text)
+            if("hey jarvis" in command):
+                engine.say("How can I help you... Question mark!")
+                engine.runAndWait()
 
-                if(text == "hey jarvis"):
-                    text = text.replace("hey jarvis", "")
+                command = command.replace("hey jarvis", "")
+                print(command)
+    except:
+        pass
+    return command
 
-                    print(text)
-                    voiceEngine.say("How can I help you... Question mark!")
-                    voiceEngine.runAndWait()
+def runJarvis():
+    command = takeCommand()
+    print(command)
 
-                    if("clap" in text):
-                        playsound(".\\Project#_TextSpeech\\clap.mp3", True)
+    if("poop" in command):
+        engine.say("POOOOOP")
+        engine.runAndWait()
+    # elif(command == "hey jarvis clap"):
+    #     playsound(".\\Project#_commandSpeech\\clap.mp3", True)
+    # elif("my name is" in command):
+    #     name = command.split()
+    #     engine.say(f"Your name is {name[-1]}")
+    #     engine.runAndWait()
+    # else:
+    #     talk("I did not get that...")
 
-                if("my name is" in text):
-                    name = text.split()
-                    voiceEngine.say(f"Your name is {name[-1]}")
-                    voiceEngine.runAndWait()
-                
-        except:
-            recognizer = sr.Recognizer()
-            continue
-
-def test():
-    recognizer = sr.Recognizer()
-    voiceEngine = pyttsx3.init()
-    voiceEngine.setProperty("rate", 190)
-
-    voiceEngine.say("I am Jarvis. Your AI Helper!")
-    voiceEngine.say("How can I help you?")
-    voiceEngine.runAndWait()
-
-    voice = voiceEngine.getProperty("voices")
-    for i in voice:
-        print(i)
-
-    # while True:
-    #     try:
-    #         with sr.Microphone() as source:
-                
-    #             recognizer.adjust_for_ambient_noise(source, duration = 0.2)
-    #             audio = recognizer.listen(source)
-
-    #             text = recognizer.recognize_google(audio)
-
-    #             print(text)
-    #     except:
-    #         recognizer = sr.Recognizer()
-    #         continue
 
 if(__name__ == "__main__"):
-    speech()
-    # test()
-
+    while True:
+        runJarvis()
